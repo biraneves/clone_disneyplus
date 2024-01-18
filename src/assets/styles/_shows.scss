@@ -1,0 +1,45 @@
+@use 'config/fn';
+@use 'config/vars';
+
+.shows {
+  padding: 2vw 5.6vw;
+
+  &__list {
+    display: none;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: fn.px2rem(24px);
+    margin-top: fn.px2rem(44px);
+    
+    &--is-active {
+      display: grid;
+    }
+
+    &__item {
+      img {
+        max-width: 100%;
+        border-radius: fn.px2rem(4px);
+      }
+    }
+  }
+
+  &__tabs {
+    display: flex;
+    justify-content: center;
+
+    &__button {
+      color: vars.$fgColorSecondary;
+      font-size: fn.px2rem(20px);
+      text-transform: uppercase;
+      background: none;
+      margin: 0 1vw;
+      border: none;
+      border-bottom: solid fn.px2rem(5px) transparent;
+      padding-bottom: fn.px2rem(5px);
+      cursor: pointer;
+
+      &--is-active {
+        border-bottom: solid fn.px2rem(5px) vars.$fgColorSecondary;
+      }
+    }
+  }
+}

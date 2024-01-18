@@ -1,5 +1,55 @@
-$bgColor: red;
+@use 'config/fn';
+@use 'config/mxn';
+@use 'config/vars';
+@use 'hero';
+
+@font-face {
+  font-family: Avenir;
+  src: url(../../../dist/assets/fonts/Avenir-Regular.woff2);
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: Avenir;
+  src: url(../../../dist/assets/fonts/Avenir-Bold.woff2);
+  font-weight: 700;
+}
+
+* {
+  @include mxn.reset;
+}
 
 body {
-  background-color: $bgColor;
+  background-color: vars.$bgColor;
+  font-family: Avenir, sans-serif;
+}
+
+.text--big {
+  @include mxn.text(18px);
+}
+
+.text {
+  @include mxn.text;
+}
+
+.text--small {
+  @include mxn.text(12px);
+}
+
+.link-text {
+  @include mxn.text(18px);
+  color: vars.$fgColorSecondary;
+  text-decoration: underline;
+}
+
+.title--big {
+  @include mxn.title(44px);
+}
+
+.title {
+  @include mxn.title;
+}
+
+.title--small {
+  @include mxn.title(28px);
 }

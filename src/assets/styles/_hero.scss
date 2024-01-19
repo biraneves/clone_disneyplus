@@ -2,57 +2,43 @@
 @use 'config/vars';
 
 .hero {
-  padding: 5.6vw;
-  min-height: 80vh;
-  background-image: url('../images/hero_desktop.jpeg');
-  text-align: center;
-  background-size: cover;
+    padding: 5.6vw;
+    min-height: 80vh;
+    background-image: url('../images/hero_desktop.jpeg');
+    text-align: center;
+    background-size: cover;
 
-  &__content {
-    max-width: 640px;
+    &__content {
+        max-width: 640px;
 
-    &__branding {
-      max-width: 320px;
-      margin: 0 auto fn.px2rem(38px);
-    }
-
-    .title--small {
-      margin-bottom: fn.px2rem(64px);
-    }
-
-    p {
-      margin-bottom: 20px;
-
-      &:last-child {
-        margin-top: fn.px2rem(60px);
-      }
-    }
-
-    &__combos {
-      display: flex;
-      justify-content: space-between;
-
-      &__combo {
-        width: calc(50% - 12px);
-
-        img {
-          max-height: fn.px2rem(60px);
+        &__branding {
+            max-width: 320px;
+            margin: 0 auto fn.px2rem(38px);
         }
 
-        button {
-          display: block;
-          width: 100%;
-          height: fn.px2rem(60px);
-          font-size: fn.px2rem(18px);
-          color: vars.$fgColorSecondary;
-          background-color: vars.$bgColorButton;
-          text-transform: uppercase;
-          border-radius: fn.px2rem(4px);
-          border: none;
-          margin-top: 2vw;
-          margin-bottom: 8px;
+        .title--small {
+            margin-bottom: fn.px2rem(64px);
         }
-      }
+
+        p {
+            margin-bottom: 20px;
+
+            &:last-child {
+                margin-top: fn.px2rem(60px);
+            }
+        }
+
+        &__combos {
+            display: flex;
+            justify-content: space-between;
+
+            &__combo {
+                width: calc(50% - 12px);
+
+                img {
+                    max-height: fn.px2rem(60px);
+                }
+            }
+        }
     }
-  }
 }

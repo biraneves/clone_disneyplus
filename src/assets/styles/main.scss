@@ -3,54 +3,70 @@
 @use 'config/vars';
 @use 'hero';
 @use 'shows';
+@use 'plans';
 
 @font-face {
-  font-family: Avenir;
-  src: url(../../../dist/assets/fonts/Avenir-Regular.woff2);
-  font-weight: 400;
+    font-family: Avenir;
+    src: url(../../../dist/assets/fonts/Avenir-Regular.woff2);
+    font-weight: 400;
 }
 
 @font-face {
-  font-family: Avenir;
-  src: url(../../../dist/assets/fonts/Avenir-Bold.woff2);
-  font-weight: 700;
+    font-family: Avenir;
+    src: url(../../../dist/assets/fonts/Avenir-Bold.woff2);
+    font-weight: 700;
 }
 
 * {
-  @include mxn.reset;
+    @include mxn.reset;
 }
 
 body {
-  background-color: vars.$bgColor;
-  font-family: Avenir, sans-serif;
+    background-color: vars.$bgColor;
+    font-family: Avenir, sans-serif;
 }
 
 .text--big {
-  @include mxn.text(18px);
+    @include mxn.text(18px);
 }
 
 .text {
-  @include mxn.text;
+    @include mxn.text;
 }
 
 .text--small {
-  @include mxn.text(12px);
+    @include mxn.text(12px);
 }
 
 .link-text {
-  @include mxn.text(18px);
-  color: vars.$fgColorSecondary;
-  text-decoration: underline;
+    @include mxn.text(18px);
+    color: vars.$fgColorSecondary;
+    text-decoration: underline;
 }
 
 .title--big {
-  @include mxn.title(44px);
+    @include mxn.title(44px);
 }
 
 .title {
-  @include mxn.title;
+    @include mxn.title;
 }
 
 .title--small {
-  @include mxn.title(28px);
+    @include mxn.title(28px);
+}
+
+.button {
+    display: block;
+    width: 100%;
+    height: fn.px2rem(60px);
+    font-size: fn.px2rem(18px);
+    color: vars.$fgColorSecondary;
+    background-color: vars.$bgColorButton;
+    text-transform: uppercase;
+    border-radius: fn.px2rem(4px);
+    border: none;
+    margin-top: 2vw;
+    margin-bottom: 8px;
+    cursor: pointer;
 }

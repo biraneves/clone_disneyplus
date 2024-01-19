@@ -38,7 +38,20 @@
                 height: 0;
                 overflow: hidden;
                 padding: 0 fn.px2rem(24px);
-                transition: height, ease 0.3s;
+                transition: height, ease 0.5s;
+
+                &__items {
+                    list-style-type: disc;
+                    margin-top: fn.px2rem(16px);
+                    padding-inline-start: fn.px2rem(40px);
+
+                    &__item {
+                        margin-bottom: fn.px2rem(16px);
+
+                        &::mark {
+                        }
+                    }
+                }
             }
 
             &--is-open {
@@ -51,7 +64,7 @@
                 .faq__questions__item__answer {
                     padding: 0 fn.px2rem(24px) 24px;
                     height: auto;
-                    transition: height, ease 0.3s;
+                    transition: height, ease 0.5s;
                 }
             }
         }

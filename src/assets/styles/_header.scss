@@ -1,0 +1,73 @@
+@use 'config/fn.scss';
+@use 'config/vars.scss';
+
+.header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    background-color: vars.$bgColor;
+    transition: background-color ease 0.5s;
+    z-index: 1;
+
+    &--is-hidden {
+        background-color: transparent;
+        transition: background-color ease 0.5s;
+
+        .header {
+            &__logo,
+            &__links__item:first-child {
+                opacity: 0;
+                visibility: hidden;
+                transition: opacity ease 0.5s;
+            }
+        }
+    }
+
+    &__container {
+        padding: fn.px2rem(8px) fn.px2rem(36px);
+        display: flex;
+        justify-content: space-between;
+
+        @media screen and (max-width: vars.$bpMobile) {
+            padding: 0 fn.px2rem(12px) 0 fn.px2rem(20px);
+        }
+    }
+
+    &__logo {
+        max-width: fn.px2rem(80px);
+        width: 100%;
+        margin: fn.px2rem(5px);
+        transition: opacity ease 0.5s;
+
+        @media screen and (max-width: vars.$bpMobile) {
+            max-width: 64px;
+        }
+    }
+
+    &__links {
+        display: flex;
+
+        &__item {
+            margin: fn.px2rem(5px);
+            transition: opacity ease 0.5s;
+
+            a {
+            }
+        }
+    }
+
+    .button {
+        height: fn.px2rem(50px);
+
+        @media screen and (max-width: vars.$bpMobile) {
+            font-size: fn.px2rem(13px);
+            padding: fn.px2rem(8px) fn.px2rem(11px);
+            height: fn.px2rem(40px);
+            letter-spacing: 0;
+        }
+    }
+}
+
+.hidden {
+    visibility: hidden;
+}

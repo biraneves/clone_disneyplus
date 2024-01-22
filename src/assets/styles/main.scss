@@ -1,6 +1,7 @@
 @use 'config/fn';
 @use 'config/mxn';
 @use 'config/vars';
+@use 'header';
 @use 'hero';
 @use 'shows';
 @use 'plans';
@@ -22,6 +23,7 @@
 
 * {
     @include mxn.reset;
+    list-style: none;
 }
 
 body {
@@ -31,14 +33,26 @@ body {
 
 .text--big {
     @include mxn.text(18px);
+
+    @media screen and (max-width: vars.$bpMobile) {
+        @include mxn.text(15px);
+    }
 }
 
 .text {
     @include mxn.text;
+
+    @media screen and (max-width: vars.$bpMobile) {
+        @include mxn.text(14px);
+    }
 }
 
 .text--small {
     @include mxn.text(12px);
+
+    @media screen and (max-width: vars.$bpMobile) {
+        @include mxn.text(11px);
+    }
 }
 
 .link-text {
@@ -49,18 +63,32 @@ body {
 
 .title--big {
     @include mxn.title(44px);
+
+    @media screen and (max-width: vars.$bpMobile) {
+        @include mxn.title(26px);
+    }
 }
 
 .title {
     @include mxn.title;
+
+    @media screen and (max-width: vars.$bpMobile) {
+        @include mxn.title(24px);
+    }
 }
 
 .title--small {
     @include mxn.title(28px);
+
+    @media screen and (max-width: vars.$bpMobile) {
+        @include mxn.title(22px);
+    }
 }
 
 .button {
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     height: fn.px2rem(60px);
     font-size: fn.px2rem(18px);
@@ -69,9 +97,34 @@ body {
     text-transform: uppercase;
     border-radius: fn.px2rem(4px);
     border: none;
-    margin-top: 2vw;
-    margin-bottom: 8px;
     cursor: pointer;
+    text-decoration: none;
+    padding: fn.px2rem(8px) fn.px2rem(14px);
+    letter-spacing: 1px;
+    border: solid 1px vars.$bgColorButton;
+
+    &:hover {
+        background-color: lighten(vars.$bgColorButton, 3%);
+    }
+
+    &--secondary {
+        background-color: vars.$bgColorButtonSecondary;
+        border: vars.$bgColorButtonSecondary;
+
+        &:hover {
+            background-color: lighten(vars.$bgColorButtonSecondary, 3%);
+        }
+    }
+
+    &--dark {
+        background-color: rgba(vars.$bgColorButtonDark, 0.8);
+        border: solid 1px vars.$fgColorSecondary;
+
+        &:hover {
+            background-color: rgba(vars.$fgColorSecondary, 0.8);
+            color: vars.$bgColor;
+        }
+    }
 }
 
 .image-text-section {
@@ -79,6 +132,10 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
+
+    @media screen and (max-width: vars.$bpMobile) {
+        display: block;
+    }
 
     img {
         max-width: 100%;
@@ -109,6 +166,12 @@ body {
             display: flex;
             flex-direction: column;
             justify-content: center;
+
+            @media screen and (max-width: vars.$bpMobile) {
+                position: relative;
+                left: 0;
+                width: 100%;
+            }
         }
     }
 }

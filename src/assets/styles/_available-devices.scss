@@ -1,4 +1,5 @@
 @use 'config/fn';
+@use 'config/vars';
 
 .available-devices {
     padding: 5.6vw;
@@ -12,6 +13,10 @@
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: fn.px2rem(24px);
+
+        @media screen and (max-width: vars.$bpMobile) {
+            grid-template-columns: 1fr 1fr;
+        }
 
         &__item {
             text-align: center;

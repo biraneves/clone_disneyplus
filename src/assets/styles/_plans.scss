@@ -1,4 +1,5 @@
 @use 'config/fn.scss';
+@use 'config/vars.scss';
 
 .plans {
     padding: 5.6vw;
@@ -11,6 +12,14 @@
         display: flex;
         justify-content: space-around;
         margin-top: fn.px2rem(50px);
+
+        @media screen and (max-width: vars.$bpMobile) {
+            display: block;
+        }
+
+        .button {
+            margin-top: fn.px2rem(24px);
+        }
 
         &__item {
             text-align: center;
